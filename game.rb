@@ -5,11 +5,19 @@ class Game
   def initialize 
     @player1 = Player.new("Player 1")
     @player2 = Player.new("Player 2")
+    # Turn.new(player1)
+    @turns = 0
+    switch()
   end
+
+  def switch
+    @turns += 1 # do a while loop?
+    if @turns / 2 == 0
+      Turn.new(@player1)
+    else
+      Turn.new(@player2)
+    end
+  end
+
 end
-
-new = Game.new
-
-puts new.player1
-puts new.player2
 
